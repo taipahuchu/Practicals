@@ -1,7 +1,7 @@
 data cars ;
 SET sashelp.cars;
 RUN;
-
+ods pdf file = "assignment4.pdf";
 TITLE "This is a revision practice";
 FOOTNOTE "Done on &sysdate9.  %sysfunc(time(),  timeampm.)";
 LIBNAME mydata "work" ;
@@ -24,7 +24,7 @@ proc univariate; VAR msrp;
 proc gchart; VBAR Make/ Discrete Type=PCT;
 proc gchart; VBAR msrp/ Type=PCT;
 RUN;
-ODS pdf close;
+
 TITLE "";
 FOOTNOTE "";
 
@@ -54,7 +54,7 @@ proc univariate; VAR msrp;
 proc gchart; VBAR Make/ Discrete Type=PCT;
 proc gchart; VBAR msrp/ Type=PCT;
 RUN;
-ODS pdf close;
+
 TITLE "";
 FOOTNOTE "";
 
@@ -89,6 +89,6 @@ histogram mpg_highway;
 fringe mpg_highway / height=20 lineattrs=(color=red);
 run;
  
-
+ODS pdf close;
 
 
