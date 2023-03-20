@@ -1,0 +1,15 @@
+CARS DATA SET
+Sample 
+The cars data set is observational data set collect from car manufacturers across the world. The below are the attributes of the data sample.
+The data set is made up of variables along with their values, which are often referred to as data values or observations. Within a table, the dataset contains and arranges data values in the form of rows and columns. The rows are known as observations in SAS, and the columns are known as SAS variables. 
+The data set is made up of variables and their values, which are often referred to as data values or observations. Within a table, the data set contains and arranges data values as columns and rows. The columns are known as SAS variables, and the rows are known as observations in SAS.
+Variable (Or Column)
+In the SAS table presentation, each column denotes a variable. The columns or variables in the above image region are product, city size, pop, and scale type.
+Rows (Or Observation)
+In the tabular presentation of the SAS dataset, every row showcases an observation. 
+
+SAS code
+
+ods pdf file= "cars.pdf";
+PROC CONTENTS DATA= SASHELP.CARS; run;
+ODS PDF CLOSE;
