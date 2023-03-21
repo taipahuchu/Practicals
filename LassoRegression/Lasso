@@ -1,1 +1,10 @@
 Lasso regresion to predict the Make of a car
+PROC GLMSELECT enables you to partition your data into disjoint subsets for training validation and testing roles. 
+This partitioning can be done by using random proportions of the data, or you can designate a variable in your data
+set that defines which observations to use for each role. See the section PARTITION Statement for more details.
+
+The following statements randomly partition the baseball data set, using 50% for training, 30% for validation, 
+and 20% for testing. The model selected at each step is scored on the validation data, and the average residual
+sums of squares (ASE) is evaluated. The model yielding the lowest ASE on the validation data is selected. 
+The ASE on the test data is also evaluated, but these data play no role in the selection process. 
+Note that a seed for the pseudo-random number generator is specified in the PROC GLMSELECT statement
