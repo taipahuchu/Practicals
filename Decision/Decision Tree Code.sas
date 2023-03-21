@@ -1,0 +1,13 @@
+Title 'Decision Tree analysis of the cars dataset predicting the Make of the car';
+
+
+data cars; SET sashelp.cars (drop=Model);run;
+PROC SORT; BY Make;
+ods graphics on;
+ods pdf file="Decision.pdf";
+PROC hpsplit assignmissing= popular seed= 15531 ;
+class Cylinders DriveTrain Origin Type Make;
+Model Make = Cylinders DriveTrain EngineSize Horsepower Invoice Length MPG_City MPG_Highway MSRP  Origin Type Weight Wheelbase;
+grow entropy; prune costcomplexity ;
+RUN;
+ods pdf close;
