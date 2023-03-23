@@ -1,0 +1,2 @@
+There was evidence of confounding for the association between Wheelbase explanatory variable and the response variable Mass of the car.
+The cofounding variable was MPG_Highway   with p- value 0.0062
